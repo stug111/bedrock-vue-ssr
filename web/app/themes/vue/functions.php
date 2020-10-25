@@ -26,12 +26,11 @@ function ssr()
 {
     global $wp;
 
-    $engine = new Node("node", __DIR__);
+    $engine = new Node("node", '/Users/vadimmishozev/Parallels');
     $renderer = new Renderer($engine);
-    $request = $wp->request;
 
     $context = [
-        'url' => $request
+        'url' => $wp->request
      ];
 
     return $renderer

@@ -7,9 +7,7 @@
 </head>
 <body>
 
-<?php
-echo ssr();
-?>
+<?php echo ssr(); ?>
 
 <?php wp_footer();?>
 
