@@ -3,6 +3,10 @@ import App from './App.vue'
 
 import './style.css'
 
-export default new Vue({
-    render: h => h(App),
-});
+export const createApp = () => {
+    const app = new Vue({
+        render: h => h(App),
+    }) 
+
+    return { app }
+}

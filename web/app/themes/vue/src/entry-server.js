@@ -1,6 +1,8 @@
 /* global context, dispatch */
-import app from './app'
+import { createApp } from './app'
 import renderVueComponentToString from 'vue-server-renderer/basic';
+
+const { app } = createApp()
 
 renderVueComponentToString(app, (err, html) => {
     if (err) {
