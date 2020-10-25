@@ -24,18 +24,12 @@ function browser_sync()
 
 function ssr()
 {
-    global $wp;
-
     $engine = new Node("node", '/Users/vadimmishozev/Parallels');
     $renderer = new Renderer($engine);
 
-    $context = [
-        'url' => $wp->request
-     ];
-
     return $renderer
         ->entry(__DIR__ . '/dist/entry-server.js')
-        ->context($context)
+        ->context(vue_context())
         ->render();
 }
 
@@ -54,4 +48,14 @@ function vue_wordpress_setup()
     register_nav_menus(array(
         'main' => 'Main Menu',
     ));
+}
+
+function vue_context()
+{
+    global $wp;
+
+    return [
+        'url' => $wp->request,
+        'menus' => array('id' => 1)
+     ];
 }

@@ -9,6 +9,10 @@
 
 <?php echo ssr(); ?>
 
+<script>
+    window.context = <?php echo json_encode(vue_context()); ?>
+</script>
+
 <?php wp_footer();?>
 
 </body>

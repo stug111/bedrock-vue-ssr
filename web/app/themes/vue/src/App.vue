@@ -7,6 +7,10 @@
 
 <script>
 export default {
-    
+    computed: {
+      menus() {
+        return this.$store.getters["site/getMenus"]
+      }
+    }
 }
 </script>
