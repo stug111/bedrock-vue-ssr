@@ -3,6 +3,8 @@
 use Spatie\Ssr\Engines\Node;
 use Spatie\Ssr\Renderer;
 
+use function Env\env;
+
 add_action('wp_enqueue_scripts', 'vue_load_scripts');
 add_action('after_setup_theme', 'vue_wordpress_setup');
 add_action('wp_footer', 'browser_sync', 999);
@@ -24,7 +26,7 @@ function browser_sync()
 
 function ssr()
 {
-    $engine = new Node("node", '/Users/vadimmishozev/Parallels');
+    $engine = new Node("node", env('NODE_PATH_TEMP'));
     $renderer = new Renderer($engine);
 
     return $renderer
