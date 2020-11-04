@@ -39,7 +39,8 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "spatie/server-side-rendering": "^0.2.6",
-    "vlucas/phpdotenv": "^4.1.8"
+    "vlucas/phpdotenv": "^4.1.8",
+    "wp-graphql/wp-graphql": "^0.14.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5.6",
