@@ -31,6 +31,7 @@ function ssr()
 
     return $renderer
         ->entry(__DIR__ . '/dist/entry-server.js')
+        ->debug()
         ->context(vue_context())
         ->render();
 }
